@@ -1,0 +1,17 @@
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\bin\Debug\net8.0-windows\ProjetoLDS.exe
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\bin\Debug\net8.0-windows\ProjetoLDS.deps.json
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\bin\Debug\net8.0-windows\ProjetoLDS.runtimeconfig.json
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\bin\Debug\net8.0-windows\ProjetoLDS.dll
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\bin\Debug\net8.0-windows\ProjetoLDS.pdb
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.Form1.resources
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.csproj.GenerateResource.cache
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.AssemblyInfoInputs.cache
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.AssemblyInfo.cs
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.csproj.CoreCompileInputs.cache
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.dll
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\refint\ProjetoLDS.dll
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.pdb
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.genruntimeconfig.cache
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ref\ProjetoLDS.dll
+C:\Users\202312030002\source\repos\SolucaoLDS\ProjetoLDS\obj\Debug\net8.0-windows\ProjetoLDS.View.Form2.resources
