@@ -32,12 +32,14 @@
             TSMCadastrar = new ToolStripMenuItem();
             TSICadAula = new ToolStripMenuItem();
             TSICadTurma = new ToolStripMenuItem();
+            historicoToolStripMenuItem = new ToolStripMenuItem();
+            aulaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { TSMCadastrar });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { TSMCadastrar, historicoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -57,12 +59,27 @@
             TSICadAula.Name = "TSICadAula";
             TSICadAula.Size = new Size(180, 22);
             TSICadAula.Text = "Aula";
+            TSICadAula.Click += TSICadAula_Click;
             // 
             // TSICadTurma
             // 
             TSICadTurma.Name = "TSICadTurma";
             TSICadTurma.Size = new Size(180, 22);
             TSICadTurma.Text = "Turma";
+            TSICadTurma.Click += TSICadTurma_Click;
+            // 
+            // historicoToolStripMenuItem
+            // 
+            historicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aulaToolStripMenuItem });
+            historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
+            historicoToolStripMenuItem.Size = new Size(67, 20);
+            historicoToolStripMenuItem.Text = "Historico";
+            // 
+            // aulaToolStripMenuItem
+            // 
+            aulaToolStripMenuItem.Name = "aulaToolStripMenuItem";
+            aulaToolStripMenuItem.Size = new Size(98, 22);
+            aulaToolStripMenuItem.Text = "Aula";
             // 
             // Form1
             // 
@@ -86,5 +103,7 @@
         private ToolStripMenuItem TSMCadastrar;
         private ToolStripMenuItem TSICadAula;
         private ToolStripMenuItem TSICadTurma;
+        private ToolStripMenuItem historicoToolStripMenuItem;
+        private ToolStripMenuItem aulaToolStripMenuItem;
     }
 }

@@ -33,14 +33,15 @@
             LblInstituto = new Label();
             TxtNome = new TextBox();
             TxtInstituto = new TextBox();
-            dataGridView1 = new DataGridView();
+            DgvTurma = new DataGridView();
             Nome = new DataGridViewTextBoxColumn();
             Instituto = new DataGridViewTextBoxColumn();
             toolStrip1 = new ToolStrip();
             TsSalvar = new ToolStripButton();
             TsExcluir = new ToolStripButton();
             TsAtualizar = new ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            TsListar = new ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)DgvTurma).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,14 +81,14 @@
             TxtInstituto.Size = new Size(240, 22);
             TxtInstituto.TabIndex = 3;
             // 
-            // dataGridView1
+            // DgvTurma
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nome, Instituto });
-            dataGridView1.Location = new Point(-1, 171);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(435, 209);
-            dataGridView1.TabIndex = 4;
+            DgvTurma.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvTurma.Columns.AddRange(new DataGridViewColumn[] { Nome, Instituto });
+            DgvTurma.Location = new Point(-1, 171);
+            DgvTurma.Name = "DgvTurma";
+            DgvTurma.Size = new Size(435, 209);
+            DgvTurma.TabIndex = 4;
             // 
             // Nome
             // 
@@ -105,7 +106,7 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { TsSalvar, TsExcluir, TsAtualizar });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { TsSalvar, TsExcluir, TsAtualizar, TsListar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(432, 25);
@@ -141,20 +142,29 @@
             TsAtualizar.Size = new Size(23, 22);
             TsAtualizar.Text = "toolStripButton1";
             // 
+            // TsListar
+            // 
+            TsListar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TsListar.Image = (Image)resources.GetObject("TsListar.Image");
+            TsListar.ImageTransparentColor = Color.Magenta;
+            TsListar.Name = "TsListar";
+            TsListar.Size = new Size(23, 22);
+            TsListar.Text = "toolStripButton1";
+            // 
             // FrmCadastarTurma
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(432, 450);
             Controls.Add(toolStrip1);
-            Controls.Add(dataGridView1);
+            Controls.Add(DgvTurma);
             Controls.Add(TxtInstituto);
             Controls.Add(TxtNome);
             Controls.Add(LblInstituto);
             Controls.Add(LblNome);
             Name = "FrmCadastarTurma";
             Text = "Cadastrar Turma";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvTurma).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ResumeLayout(false);
@@ -167,12 +177,13 @@
         private Label LblInstituto;
         private TextBox TxtNome;
         private TextBox TxtInstituto;
-        private DataGridView dataGridView1;
+        private DataGridView DgvTurma;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Instituto;
         private ToolStrip toolStrip1;
         private ToolStripButton TsSalvar;
         private ToolStripButton TsExcluir;
         private ToolStripButton TsAtualizar;
+        private ToolStripButton TsListar;
     }
 }

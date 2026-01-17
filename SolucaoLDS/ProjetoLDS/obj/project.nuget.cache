@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BHFsDxQohNGMcvrqiHRWHX/J3eUT8dFub9AUNQaOelRYpLu0oNCQAPfb58WH3i0sc3NwW7IH8RRYkSqth4DCfA==",
+  "dgSpecHash": "TReqfe9hvy7tbWYQCXp8FOIGhkXrF/kcWtdtoTlFGFRqQhE+YWFDolrmWI6310iPufvNAdv9zTnOlOnk/Ym/6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\202312030002\\source\\repos\\SolucaoLDS\\ProjetoLDS\\ProjetoLDS.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\202312030002\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\202312030002\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\202312030002\\.nuget\\packages\\mysqlconnector\\2.5.0\\mysqlconnector.2.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

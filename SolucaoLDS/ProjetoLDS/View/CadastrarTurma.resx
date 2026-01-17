@@ -123,6 +123,12 @@
   <metadata name="Instituto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Nome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Instituto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -609,6 +615,19 @@
         8U/pFenZ6XHpoemIVP+tNcDbLQ8AVqSmLdYdhUunGoSr66a6w3CjVN++q/+V6gNFVf/32l+v/111nbT2
         9x+Q6p/pGzsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCSXOhC/x8bCZUZwmAzgAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="TsListar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGISURBVEhLzdXLK0ZBGMfx41aW4i8gNnIrIhZSSmxkbSE7
+        CxEbC0VZECu3JRuRJVs2ViQLW5eFWMpdyiXX78OZ05h35j3zKvX+6lNn5szMU8973nMCR8qx8HMZnOEz
+        xil64ZUKXGLje+RXQHygGElTiSvIhlQLiD44UwV1uPhLgQFYU4Zr6IvnkQm9aBxngRK0alqQjXbYDnJx
+        FihFh2Ead7Ad5OIsMAnbhlSlT4Fx5HpYgb7Pu8AJZjxcQN+XPi2ScZ6HVej7vAsch3NxzqHv+9cWvaMf
+        1pgFZGy2ow4v0Ne9YgK1kKfKGbOArUXr0NfcoBo56MYshiFvhYSYBXx0Ih/72px4Rhd+xSwwBbNF9VAt
+        OoRkCWpPG7bD60cUIYpZ4Cic061B3V9GBu7xgFFkoRlbkDU9iGIWiDMH+VHfIC2S170UlJYNQtYMIYq8
+        e8xDktmBZA9qrgCL2rgJURqhbvh4QiEaII+qzElb5cMv19LOhIzB/Gcmswv56tVgE7c4wAjk0SVB8AWD
+        AFxOZv7kawAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
