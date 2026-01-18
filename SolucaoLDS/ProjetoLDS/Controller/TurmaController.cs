@@ -15,7 +15,32 @@ namespace ProjetoLDS.Controller
             bool retornadao = false;
             TurmaDTO turmaDTO = new TurmaDTO(nome, instituto);
             TurmaDAO turmaDAO = new TurmaDAO();
-            retornadao = turmaDAO.Adicionar(turmaDTO);
+            retornadao = turmaDAO.AdicionarTurma(turmaDTO);
+            return retornadao;
+        }
+
+        public bool RemoverTurma(int idTurma)
+        {
+            bool retornadao = false;
+            TurmaDAO turmaDAO = new TurmaDAO();
+            retornadao = turmaDAO.RemoverTurma(idTurma);
+            return retornadao;
+        }
+
+        public List<TurmaDTO> ListarTurmas()
+        {
+            List<TurmaDTO> listaRetornada = new List<TurmaDTO>();
+            TurmaDAO turmaDAO = new TurmaDAO();
+            listaRetornada = turmaDAO.ListarTurmas();
+            return listaRetornada;
+        }
+
+        public bool AtualizarTurma(int idTurma, string nome, string instituto)
+        {
+            bool retornadao = false;
+            TurmaDTO turmaDTO = new TurmaDTO(idTurma, nome, instituto);
+            TurmaDAO turmaDAO = new TurmaDAO();
+            retornadao = turmaDAO.AtualizarTurma(turmaDTO);
             return retornadao;
         }
     }

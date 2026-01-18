@@ -20,13 +20,13 @@ namespace ProjetoLDS.Model.DTO
         {
             this.idTurma = idTurma;
             this.nome = nome;
-            instituto = instituto;
+            this.instituto = instituto;
         }
 
         public TurmaDTO(string nome, string instituto)
         {
             this.nome = nome;
-            instituto = instituto;
+            this.instituto = instituto;
         }
 
         public int IdTurma { get => idTurma; set => idTurma = value; }

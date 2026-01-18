@@ -18,14 +18,14 @@ namespace ProjetoLDS.Model.DAO
 
         public TurmaDAO()
         {
-            String strconexao = "server=localhost;userid=root;password=;database=gestaodeaulas";
+            String strconexao = "server=localhost;userid=root;password=monarca;database=gestaodeaulas";
             con = new MySqlConnection(strconexao);
         }
 
-        public bool Adicionar(TurmaDTO turmaDTO)
+        public bool AdicionarTurma(TurmaDTO turmaDTO)
         {
             con.Open();
-            comandoSql = "insert into gestaodeaulas(nome, instituto) values (@nome, @instituto)";
+            comandoSql = "insert into turma(nome, instituto) values (@nome, @instituto)";
             envelope = new MySqlCommand();
             envelope.CommandText = comandoSql;
             envelope.Connection = con;
@@ -48,6 +48,79 @@ namespace ProjetoLDS.Model.DAO
             }
         }
 
+        public bool RemoverTurma(int idTurma)
+        {
+            con.Open();
+            comandoSql = "delete from turma where idTurma = @idTurma";
+            envelope = new MySqlCommand();
+            envelope.CommandText = comandoSql;
+            envelope.Connection = con;
+            envelope.Parameters.AddWithValue("@idTurma", idTurma);
+            envelope.Prepare();
+            int resultado = envelope.ExecuteNonQuery();
+            con.Close();
+            if (resultado > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public List<TurmaDTO> ListarTurmas()
+        {
+            listadeturma = new List<TurmaDTO>();
+            con.Open();
+            
+            comandoSql = "select * from turma";
+            envelope = new MySqlCommand(comandoSql, con);
+            envelope.Prepare();
+            cursor = envelope.ExecuteReader();
+
+            while (cursor.Read())
+            {
+                TurmaDTO turmaDTO = new TurmaDTO();
+                turmaDTO.IdTurma = cursor.GetInt32("idTurma");
+                turmaDTO.Nome = cursor.GetString("nome");
+                turmaDTO.Instituto = cursor.GetString("instituto");
+                listadeturma.Add(turmaDTO);
+            }
+            
+            con.Close();
+
+            return listadeturma;
+        }
+
+        public bool AtualizarTurma(TurmaDTO turmaDTO)
+        {
+            con.Open();
+            comandoSql = "update turma set nome = @nome, instituto = @instituto where idTurma = @idTurma";
+            envelope = new MySqlCommand();
+            
+            envelope.CommandText = comandoSql;
+            
+            envelope.Connection = con;
+            
+            envelope.Parameters.AddWithValue("@nome", turmaDTO.Nome);
+            envelope.Parameters.AddWithValue("@instituto", turmaDTO.Instituto);
+            envelope.Parameters.AddWithValue("@idTurma", turmaDTO.IdTurma);
+            envelope.Prepare();
+            
+            int resultado = envelope.ExecuteNonQuery();
+            
+            con.Close();
+            
+            if (resultado > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 

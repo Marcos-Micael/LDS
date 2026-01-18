@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TReqfe9hvy7tbWYQCXp8FOIGhkXrF/kcWtdtoTlFGFRqQhE+YWFDolrmWI6310iPufvNAdv9zTnOlOnk/Ym/6g==",
+  "dgSpecHash": "+6Z4SS7X1G8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\202312030002\\source\\repos\\SolucaoLDS\\ProjetoLDS\\ProjetoLDS.csproj",
+  "projectFilePath": "C:\\Users\\marco\\OneDrive\\Documentos\\Atividades\\LDS\\SolucaoLDS\\ProjetoLDS\\ProjetoLDS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\202312030002\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
-    "C:\\Users\\202312030002\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
-    "C:\\Users\\202312030002\\.nuget\\packages\\mysqlconnector\\2.5.0\\mysqlconnector.2.5.0.nupkg.sha512"
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\mysqlconnector\\2.5.0\\mysqlconnector.2.5.0.nupkg.sha512"
   ],
   "logs": []
 }
