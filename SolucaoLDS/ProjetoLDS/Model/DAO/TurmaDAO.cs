@@ -2,6 +2,7 @@
 using ProjetoLDS.Model.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,10 +42,10 @@ namespace ProjetoLDS.Model.DAO
             if (resultado > 0)
             {
                 return true;
-            } 
-            else 
-            { 
-                return false; 
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -73,7 +74,7 @@ namespace ProjetoLDS.Model.DAO
         {
             listadeturma = new List<TurmaDTO>();
             con.Open();
-            
+
             comandoSql = "select * from turma";
             envelope = new MySqlCommand(comandoSql, con);
             envelope.Prepare();
@@ -87,7 +88,7 @@ namespace ProjetoLDS.Model.DAO
                 turmaDTO.Instituto = cursor.GetString("instituto");
                 listadeturma.Add(turmaDTO);
             }
-            
+
             con.Close();
 
             return listadeturma;
@@ -98,20 +99,20 @@ namespace ProjetoLDS.Model.DAO
             con.Open();
             comandoSql = "update turma set nome = @nome, instituto = @instituto where idTurma = @idTurma";
             envelope = new MySqlCommand();
-            
+
             envelope.CommandText = comandoSql;
-            
+
             envelope.Connection = con;
-            
+
             envelope.Parameters.AddWithValue("@nome", turmaDTO.Nome);
             envelope.Parameters.AddWithValue("@instituto", turmaDTO.Instituto);
             envelope.Parameters.AddWithValue("@idTurma", turmaDTO.IdTurma);
             envelope.Prepare();
-            
+
             int resultado = envelope.ExecuteNonQuery();
-            
+
             con.Close();
-            
+
             if (resultado > 0)
             {
                 return true;
@@ -122,7 +123,25 @@ namespace ProjetoLDS.Model.DAO
             }
         }
 
+        public DataTable CarregarCMB()
+        {
+            try
+            {
+                con.Open();
+                comandoSql = "select idTurma, nome from turma";
+                envelope = new MySqlCommand(comandoSql, con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(envelope);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                con.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao carregar as turmas: " + ex.Message);
+            }
+
+        }
+
     }
-
-
 }

@@ -2,6 +2,7 @@
 using ProjetoLDS.Model.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,12 @@ namespace ProjetoLDS.Controller
             TurmaDAO turmaDAO = new TurmaDAO();
             retornadao = turmaDAO.AtualizarTurma(turmaDTO);
             return retornadao;
+        }
+
+        public DataTable CarregarCMB()
+        {
+            TurmaDAO turmaDAO = new TurmaDAO();
+            return turmaDAO.CarregarCMB();
         }
     }
 }

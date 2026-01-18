@@ -55,6 +55,7 @@ namespace ProjetoLDS.View
             {
                 MessageBox.Show("Turma cadastrada com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limparCampos();
+                TsListar_Click(sender, e);
             }
             else
             {

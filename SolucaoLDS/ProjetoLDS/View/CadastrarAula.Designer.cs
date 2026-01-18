@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarAula));
-            dataGridView1 = new DataGridView();
+            DgvAula = new DataGridView();
+            ColunaIdAula = new DataGridViewTextBoxColumn();
             ColunaTitulo = new DataGridViewTextBoxColumn();
             ColunaTurma = new DataGridViewTextBoxColumn();
             ColunaData = new DataGridViewTextBoxColumn();
@@ -41,30 +42,38 @@
             label4 = new Label();
             label5 = new Label();
             TxtTitulo = new TextBox();
-            TxtHorario = new TextBox();
-            textBox1 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            TxtDescricao = new TextBox();
+            DtpData = new DateTimePicker();
             CmbTurma = new ComboBox();
-            BtnConcluida = new Button();
             BtnInfo = new Button();
             toolStrip1 = new ToolStrip();
             TsSalvar = new ToolStripButton();
             TsExcluir = new ToolStripButton();
             TsAtualizar = new ToolStripButton();
             TsListar = new ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            DtpHorario = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)DgvAula).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // DgvAula
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColunaTitulo, ColunaTurma, ColunaData, ColunaHorario, ColunaDescricao });
-            dataGridView1.Location = new Point(460, 50);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(545, 377);
-            dataGridView1.TabIndex = 0;
+            DgvAula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvAula.Columns.AddRange(new DataGridViewColumn[] { ColunaIdAula, ColunaTitulo, ColunaTurma, ColunaData, ColunaHorario, ColunaDescricao });
+            DgvAula.Location = new Point(460, 50);
+            DgvAula.Name = "DgvAula";
+            DgvAula.RowHeadersWidth = 51;
+            DgvAula.Size = new Size(677, 377);
+            DgvAula.TabIndex = 0;
+            DgvAula.CellDoubleClick += DgvAula_CellDoubleClick;
+            // 
+            // ColunaIdAula
+            // 
+            ColunaIdAula.HeaderText = "Id";
+            ColunaIdAula.MinimumWidth = 6;
+            ColunaIdAula.Name = "ColunaIdAula";
+            ColunaIdAula.ReadOnly = true;
+            ColunaIdAula.Width = 125;
             // 
             // ColunaTitulo
             // 
@@ -164,33 +173,25 @@
             TxtTitulo.Size = new Size(255, 35);
             TxtTitulo.TabIndex = 6;
             // 
-            // TxtHorario
+            // TxtDescricao
             // 
-            TxtHorario.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtHorario.Location = new Point(150, 211);
-            TxtHorario.Name = "TxtHorario";
-            TxtHorario.Size = new Size(255, 35);
-            TxtHorario.TabIndex = 8;
+            TxtDescricao.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtDescricao.Location = new Point(177, 252);
+            TxtDescricao.Multiline = true;
+            TxtDescricao.Name = "TxtDescricao";
+            TxtDescricao.Size = new Size(255, 125);
+            TxtDescricao.TabIndex = 9;
             // 
-            // textBox1
+            // DtpData
             // 
-            textBox1.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(177, 252);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(255, 125);
-            textBox1.TabIndex = 9;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.CalendarFont = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.CustomFormat = "";
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(150, 171);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(255, 26);
-            dateTimePicker1.TabIndex = 10;
-            dateTimePicker1.Value = new DateTime(2026, 1, 17, 0, 0, 0, 0);
+            DtpData.CalendarFont = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DtpData.CustomFormat = "";
+            DtpData.Format = DateTimePickerFormat.Short;
+            DtpData.Location = new Point(150, 171);
+            DtpData.Name = "DtpData";
+            DtpData.Size = new Size(255, 26);
+            DtpData.TabIndex = 10;
+            DtpData.Value = new DateTime(2026, 1, 17, 0, 0, 0, 0);
             // 
             // CmbTurma
             // 
@@ -201,23 +202,15 @@
             CmbTurma.Size = new Size(255, 35);
             CmbTurma.TabIndex = 11;
             // 
-            // BtnConcluida
-            // 
-            BtnConcluida.Location = new Point(536, 446);
-            BtnConcluida.Name = "BtnConcluida";
-            BtnConcluida.Size = new Size(164, 79);
-            BtnConcluida.TabIndex = 12;
-            BtnConcluida.Text = "Aula Concluida";
-            BtnConcluida.UseVisualStyleBackColor = true;
-            // 
             // BtnInfo
             // 
-            BtnInfo.Location = new Point(776, 446);
+            BtnInfo.Location = new Point(670, 441);
             BtnInfo.Name = "BtnInfo";
-            BtnInfo.Size = new Size(164, 79);
+            BtnInfo.Size = new Size(277, 84);
             BtnInfo.TabIndex = 13;
             BtnInfo.Text = "Mais Informação";
             BtnInfo.UseVisualStyleBackColor = true;
+            BtnInfo.Click += BtnInfo_Click;
             // 
             // toolStrip1
             // 
@@ -225,7 +218,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { TsSalvar, TsExcluir, TsAtualizar, TsListar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1006, 27);
+            toolStrip1.Size = new Size(1136, 27);
             toolStrip1.TabIndex = 14;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -239,6 +232,7 @@
             TsSalvar.Name = "TsSalvar";
             TsSalvar.Size = new Size(29, 24);
             TsSalvar.Text = "Adicionar";
+            TsSalvar.Click += TsSalvar_Click;
             // 
             // TsExcluir
             // 
@@ -248,6 +242,7 @@
             TsExcluir.Name = "TsExcluir";
             TsExcluir.Size = new Size(29, 24);
             TsExcluir.Text = "Deletar";
+            TsExcluir.Click += TsExcluir_Click;
             // 
             // TsAtualizar
             // 
@@ -257,6 +252,7 @@
             TsAtualizar.Name = "TsAtualizar";
             TsAtualizar.Size = new Size(29, 24);
             TsAtualizar.Text = "Atualizar";
+            TsAtualizar.Click += TsAtualizar_Click;
             // 
             // TsListar
             // 
@@ -266,30 +262,42 @@
             TsListar.Name = "TsListar";
             TsListar.Size = new Size(29, 24);
             TsListar.Text = "Listar";
+            TsListar.Click += TsListar_Click;
+            // 
+            // DtpHorario
+            // 
+            DtpHorario.CalendarFont = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DtpHorario.CustomFormat = "";
+            DtpHorario.Format = DateTimePickerFormat.Time;
+            DtpHorario.Location = new Point(150, 212);
+            DtpHorario.Name = "DtpHorario";
+            DtpHorario.Size = new Size(255, 26);
+            DtpHorario.TabIndex = 15;
+            DtpHorario.Value = new DateTime(2026, 1, 18, 11, 39, 42, 0);
             // 
             // CadastrarAula
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1006, 537);
+            ClientSize = new Size(1136, 537);
+            Controls.Add(DtpHorario);
             Controls.Add(toolStrip1);
             Controls.Add(BtnInfo);
-            Controls.Add(BtnConcluida);
             Controls.Add(CmbTurma);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox1);
-            Controls.Add(TxtHorario);
+            Controls.Add(DtpData);
+            Controls.Add(TxtDescricao);
             Controls.Add(TxtTitulo);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(DgvAula);
             Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "CadastrarAula";
             Text = "Cadastrar Aula";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += CadastrarAula_Load;
+            ((System.ComponentModel.ISupportInitialize)DgvAula).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ResumeLayout(false);
@@ -298,28 +306,28 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ColunaTitulo;
-        private DataGridViewTextBoxColumn ColunaTurma;
-        private DataGridViewTextBoxColumn ColunaData;
-        private DataGridViewTextBoxColumn ColunaHorario;
-        private DataGridViewTextBoxColumn ColunaDescricao;
+        private DataGridView DgvAula;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private TextBox TxtTitulo;
-        private TextBox TxtHorario;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox TxtDescricao;
+        private DateTimePicker DtpData;
         private ComboBox CmbTurma;
-        private Button BtnConcluida;
         private Button BtnInfo;
         private ToolStrip toolStrip1;
         private ToolStripButton TsSalvar;
         private ToolStripButton TsExcluir;
         private ToolStripButton TsAtualizar;
         private ToolStripButton TsListar;
+        private DateTimePicker DtpHorario;
+        private DataGridViewTextBoxColumn ColunaIdAula;
+        private DataGridViewTextBoxColumn ColunaTitulo;
+        private DataGridViewTextBoxColumn ColunaTurma;
+        private DataGridViewTextBoxColumn ColunaData;
+        private DataGridViewTextBoxColumn ColunaHorario;
+        private DataGridViewTextBoxColumn ColunaDescricao;
     }
 }

@@ -42,6 +42,11 @@ namespace ProjetoLDS.Model.DTO
             this.idTurma = idTurma;
         }
 
+        public AulaDTO(string descricao)
+        {
+            this.descricao = descricao;
+        }
+
         public int IdAula { get => idAula; set => idAula = value; }
         public int IdTurma { get => idTurma; set => idTurma = value; }
         public String Titulo {  get => titulo; set => titulo = value; }
